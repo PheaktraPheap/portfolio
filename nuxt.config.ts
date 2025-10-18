@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: 'Your Name - Portfolio',
+      title: 'Pheap Sopheaktra - Portfolio',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -19,6 +19,13 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
       ]
+    }
+  },
+  // Important for static generation
+  ssr: true,
+  nitro: {
+    prerender: {
+      routes: ['/']
     }
   }
 })
