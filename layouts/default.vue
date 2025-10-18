@@ -6,7 +6,7 @@
       </main>
       <footer class="bg-gray-900 text-white py-8">
         <div class="container mx-auto px-6 text-center">
-          <p>&copy; {{ new Date().getFullYear() }} Your Name. All rights reserved.</p>
+          <p>&copy; {{ new Date().getFullYear() }} Pheap Sopheaktra. All rights reserved.</p>
         </div>
       </footer>
     </div>
