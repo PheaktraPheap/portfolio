@@ -1,7 +1,11 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+// nuxt.config.ts
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  css: ['~/assets/css/main.css'],
+  // Remove the css array or use correct path
+  // css: ['~/assets/css/main.css'], // Remove this line
+  modules: [
+    '@nuxt/icon'
+  ],
   postcss: {
     plugins: {
       tailwindcss: {},
@@ -10,7 +14,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: 'Pheap Sopheaktra - Portfolio',
+      title: 'Your Name - Portfolio',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -21,11 +25,5 @@ export default defineNuxtConfig({
       ]
     }
   },
-  // Important for static generation
-  ssr: true,
-  nitro: {
-    prerender: {
-      routes: ['/']
-    }
-  }
+  ssr: true
 })
