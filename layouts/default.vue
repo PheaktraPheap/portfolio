@@ -11,3 +11,8 @@
       </footer>
     </div>
   </template>
+  
+  <script setup>
+  // Remove the CSS import from here
+  // The CSS is now imported in nuxt.config.ts
+  </script>

@@ -3,7 +3,7 @@
       <nav class="container mx-auto px-6 py-4">
         <div class="flex justify-between items-center">
           <NuxtLink to="/" class="text-2xl font-bold text-primary-600">
-            Your Name
+            Pheap Sopheaktra
           </NuxtLink>
           
           <div class="hidden md:flex space-x-8">

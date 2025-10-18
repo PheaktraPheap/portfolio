@@ -1,11 +1,9 @@
-// nuxt.config.ts
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  // Remove the css array or use correct path
-  // css: ['~/assets/css/main.css'], // Remove this line
   modules: [
     '@nuxt/icon'
   ],
+  css: ['~/assets/css/main.css'],
   postcss: {
     plugins: {
       tailwindcss: {},
@@ -14,11 +12,11 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: 'Your Name - Portfolio',
+      title: 'Pheap Sopheaktra',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Your professional portfolio website' }
+        { name: 'description', content: 'My professional portfolio' }
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
