@@ -55,7 +55,7 @@ const handleScrollToTop = () => {
 
 const showButton = ref(false);
 const scrollProgress = ref(0);
-const scrollThreshold = 10;
+const scrollThreshold = 25;
 
 const updateScrollProgress = () => {
   if (process.client) {
