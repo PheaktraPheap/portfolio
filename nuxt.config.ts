@@ -1,7 +1,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
-    '@nuxt/icon'
+    'nuxt-icon'
   ],
   css: ['~/assets/css/main.css'],
   postcss: {
