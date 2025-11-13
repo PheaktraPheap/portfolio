@@ -1,9 +1,13 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
-    'nuxt-icon'
+    'nuxt-icon',
+    '@nuxtjs/color-mode'
   ],
   css: ['~/assets/css/main.css'],
+  colorMode: {
+    classSuffix: '', // So Tailwind's `dark:` works directly
+  },
   postcss: {
     plugins: {
       tailwindcss: {},

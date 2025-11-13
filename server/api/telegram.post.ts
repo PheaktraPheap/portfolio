@@ -2,10 +2,10 @@
 export default defineEventHandler(async (event) => {
     const body = await readBody(event)
     
-    const { name, email, message } = body
+    const { name, email, project_type, message } = body
     
     // Validate required fields
-    if (!name || !email || !message) {
+    if (!name || !email || !project_type || !message) {
       throw createError({
         statusCode: 400,
         statusMessage: 'Name, email, and message are required'
@@ -19,9 +19,10 @@ export default defineEventHandler(async (event) => {
     // Format the message for Telegram
     const telegramMessage = `
   📧 New Contact Form Submission
-  
-  Name: ${name}
+
   Email: ${email}
+  Subject: ${name}
+  Project Type: ${project_type}
   Message: ${message}
   
   📅 Submitted at: ${new Date().toLocaleString()}
