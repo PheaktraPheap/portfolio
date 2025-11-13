@@ -219,7 +219,7 @@ const submitForm = async () => {
   loading.value = true
 
   try {
-    const response = await $fetch('/api/contact', {
+    const response = await $fetch('/api/telegram', {
       method: 'POST',
       body: form.value
     })
