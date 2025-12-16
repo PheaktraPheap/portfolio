@@ -2,7 +2,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     'nuxt-icon',
-    '@nuxtjs/sitemap',
     '@nuxtjs/color-mode'
   ],
   css: ['~/assets/css/main.css'],
@@ -52,12 +51,4 @@ export default defineNuxtConfig({
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000'
     }
   },
-  sitemap: {
-    hostname: 'https://pheap-sopheaktra.vercel.app',
-    routes: [
-      '/',
-      '/projects',
-      '/contact'
-    ],
-  }
 })
