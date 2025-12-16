@@ -78,6 +78,7 @@
           v-for="link in navigation"
           :key="link.name"
           :to="link.href"
+          :target="link.external ? '_blank' : '_self'"
           class="block text-sm font-medium
                  text-gray-700 dark:text-gray-200
                  hover:text-primary-600 dark:hover:text-primary-400
