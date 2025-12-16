@@ -107,22 +107,35 @@ const navigation = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '#about' },
   { name: 'Projects', href: '#projects' },
-  { name: 'Contact', href: 'https://t.me/Pheap_Sopheaktra', external: true, },
+  { name: 'Contact', href: 'https://t.me/Pheap_Sopheaktra', external: true },
 ];
 
-const handleNavClick = (e: Event, href: string) => {
-  if (href.startsWith('#')) {
+// Handle navigation clicks
+const handleNavClick = (e: Event, link: { href: string; external?: boolean }) => {
+  // If it's an internal anchor link
+  if (link.href.startsWith('#')) {
     e.preventDefault();
-    const sectionId = href.substring(1);
+    const sectionId = link.href.substring(1);
     scrollToElement(sectionId, 80);
+  } 
+  // If external link, allow normal behavior
+  else if (link.external) {
+    // Do nothing, browser will open the link
+  } 
+  // If it's the home page link
+  else if (link.href === '/') {
+    e.preventDefault();
+    scrollToTop();
   }
 };
 
-const handleMobileNavClick = (e: Event, href: string) => {
-  handleNavClick(e, href);
+// For mobile menu: handle click + close menu
+const handleMobileNavClick = (e: Event, link: { href: string; external?: boolean }) => {
+  handleNavClick(e, link);
   isOpen.value = false;
 };
 
+// Home logo click
 const handleHomeClick = (e: Event) => {
   if (window.location.pathname === '/') {
     e.preventDefault();
@@ -130,3 +143,4 @@ const handleHomeClick = (e: Event) => {
   }
 };
 </script>
+
