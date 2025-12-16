@@ -1,54 +1,74 @@
 <template>
-  <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-gray-900">
-    <!-- Geometric Background -->
-    <div class="absolute inset-0">
-      <!-- Large Triangles -->
-      <div class="absolute top-0 left-0 w-64 h-64 bg-blue-500/5 clip-triangle"></div>
-      <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/5 clip-triangle-reverse"></div>
-      
-      <!-- Circles -->
-      <div class="absolute top-1/4 right-1/4 w-48 h-48 border-2 border-blue-200/30 rounded-full animate-pulse"></div>
-      <div class="absolute bottom-1/3 left-1/4 w-32 h-32 border-2 border-green-200/30 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
-      
-      <!-- Grid Dots -->
-      <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(circle, #3b82f6 1px, transparent 1px); background-size: 50px 50px;"></div>
-      
-      <!-- Animated Lines -->
-      <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent animate-shimmer"></div>
-      <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent animate-shimmer" style="animation-delay: 2s;"></div>
-    </div>
+  <section
+    class="relative min-h-screen flex items-center
+           bg-white dark:bg-gray-950"
+  >
+    <div class="container mx-auto px-6">
+      <div class="max-w-5xl">
 
-    <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
-      <h1 class="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6">
-        Hi, I'm 
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-          Pheap Sopheaktra
-        </span>
-      </h1>
-      
-      <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
-        A passionate developer specializing in modern web technologies. I create beautiful and functional digital experiences.
-      </p>
+        <!-- Eyebrow -->
+        <p
+          class="text-sm uppercase tracking-widest
+                 text-gray-500 dark:text-gray-400"
+        >
+          Portfolio
+        </p>
 
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-    <NuxtLink 
-      to="#projects"
-      class="px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-lg font-semibold hover:scale-105 transition-transform duration-300 hover:shadow-lg active:scale-95 text-center"
-      @click="handleProjectsClick"
-    >
-      View My Work
-    </NuxtLink>
-    <NuxtLink 
-      to="#contact"
-      class="px-8 py-4 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white rounded-lg font-semibold hover:scale-105 transition-transform duration-300 hover:shadow-lg active:scale-95 hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 text-center"
-      @click="handleContactClick"
-    >
-      Get In Touch
-    </NuxtLink>
-  </div>
+        <!-- Title -->
+        <h1
+          class="mt-6 text-5xl md:text-7xl
+                 font-bold leading-tight
+                 text-gray-900 dark:text-white"
+        >
+          I’m <span class="underline decoration-4 decoration-primary-500">
+            Pheap Sopheaktra
+          </span><br />
+          a web developer
+        </h1>
+
+        <!-- Description -->
+        <p
+          class="mt-8 text-xl
+                 text-gray-600 dark:text-gray-300
+                 max-w-2xl"
+        >
+          I build reliable and thoughtful web applications using modern
+          technologies. I care about clarity, maintainability, and user experience.
+        </p>
+
+        <!-- Actions -->
+        <div class="mt-12 flex flex-wrap gap-6">
+          <NuxtLink
+            to="#projects"
+            class="inline-flex items-center gap-2
+                   text-lg font-medium
+                   text-gray-900 dark:text-white
+                   border-b-2 border-gray-900 dark:border-white
+                   hover:border-primary-500
+                   transition"
+            @click="handleProjectsClick"
+          >
+            View Projects →
+          </NuxtLink>
+
+          <NuxtLink
+            class="inline-flex items-center gap-2
+                   text-lg font-medium
+                   text-gray-500 dark:text-gray-400
+                   hover:text-primary-600
+                   transition"
+            @click="handleContactClick"
+          >
+            Contact Me
+          </NuxtLink>
+        </div>
+
+      </div>
     </div>
   </section>
 </template>
+
+
 
 <script setup lang="ts">
 // Handle Projects click

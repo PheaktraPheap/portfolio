@@ -1,56 +1,94 @@
 <template>
   <header
-    class="fixed top-0 left-0 right-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md z-50 border-b border-gray-200 dark:border-gray-800"
+    class="fixed top-0 left-0 right-0 z-50
+           bg-white/70 dark:bg-gray-950
+           backdrop-blur-xl
+           border-b border-gray-200/60 dark:border-gray-800/60
+           shadow-sm"
   >
+    <!-- Accent Line -->
+    <div
+      class="absolute inset-x-0 -bottom-px h-px
+             bg-gradient-to-r
+             from-transparent via-primary-500/60 to-transparent"
+    />
+
     <nav class="container mx-auto px-6 py-4">
       <div class="flex justify-between items-center">
+
+        <!-- Brand -->
         <NuxtLink
           to="/"
-          class="text-2xl font-bold text-primary-600"
+          class="text-xl md:text-2xl font-extrabold tracking-tight
+                 bg-gradient-to-r from-primary-500 to-violet-500
+                 bg-clip-text text-transparent
+                 hover:opacity-90 transition"
           @click="handleHomeClick"
         >
-          Pheap Sopheaktra
+          Pheap <span class="font-light">Sopheaktra</span>
         </NuxtLink>
 
-        <div class="hidden md:flex items-center space-x-8">
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center gap-10">
           <NuxtLink
             v-for="link in navigation"
             :key="link.name"
             :to="link.href"
-            class="text-gray-600 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400 transition-colors"
+            class="relative text-sm font-medium
+                   text-gray-600 dark:text-gray-300
+                   hover:text-primary-600 dark:hover:text-primary-400
+                   transition-colors
+                   after:absolute after:-bottom-1 after:left-0
+                   after:h-0.5 after:w-0 after:bg-primary-500
+                   after:transition-all after:duration-300
+                   hover:after:w-full"
             @click="(e) => handleNavClick(e, link.href)"
           >
             {{ link.name }}
           </NuxtLink>
 
-          <!-- Desktop Theme Toggle -->
           <ThemeToggle />
         </div>
 
-        <!-- Mobile menu button -->
-        <button class="md:hidden" @click="isOpen = !isOpen">
-          <div class="w-6 flex flex-col space-y-1">
-            <span class="h-0.5 w-full bg-gray-600 dark:bg-gray-300"></span>
-            <span class="h-0.5 w-full bg-gray-600 dark:bg-gray-300"></span>
-            <span class="h-0.5 w-full bg-gray-600 dark:bg-gray-300"></span>
+        <!-- Mobile Menu Button -->
+        <button
+          class="md:hidden p-2 rounded-lg
+                 hover:bg-gray-100 dark:hover:bg-gray-800
+                 transition"
+          @click="isOpen = !isOpen"
+        >
+          <div class="w-7 flex flex-col gap-1.5">
+            <span class="h-0.5 w-full rounded bg-gray-700 dark:bg-gray-200"></span>
+            <span class="h-0.5 w-full rounded bg-gray-700 dark:bg-gray-200"></span>
+            <span class="h-0.5 w-full rounded bg-gray-700 dark:bg-gray-200"></span>
           </div>
         </button>
       </div>
 
-      <!-- Mobile menu -->
-      <div v-if="isOpen" class="md:hidden mt-4 space-y-4">
+      <!-- Mobile Menu -->
+      <div
+        v-if="isOpen"
+        class="md:hidden mt-6 rounded-2xl
+               bg-white/90 dark:bg-gray-900/90
+               backdrop-blur-xl
+               border border-gray-200 dark:border-gray-800
+               shadow-lg p-6 space-y-5"
+      >
         <NuxtLink
           v-for="link in navigation"
           :key="link.name"
           :to="link.href"
-          class="block text-gray-600 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400 transition-colors"
+          class="block text-sm font-medium
+                 text-gray-700 dark:text-gray-200
+                 hover:text-primary-600 dark:hover:text-primary-400
+                 transition"
           @click="(e) => handleMobileNavClick(e, link.href)"
         >
           {{ link.name }}
         </NuxtLink>
 
-        <!-- Mobile Theme Toggle -->
-        <div class="flex justify-center">
+        <div class="pt-4 border-t border-gray-200 dark:border-gray-800
+                    flex justify-center">
           <ThemeToggle />
         </div>
       </div>
@@ -68,7 +106,7 @@ const navigation = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '#about' },
   { name: 'Projects', href: '#projects' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Contact', href: 'https://t.me/Pheap_Sopheaktra', external: true, },
 ];
 
 const handleNavClick = (e: Event, href: string) => {
