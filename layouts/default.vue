@@ -67,15 +67,28 @@
     </footer>
   </div>
 </template>
-
 <script setup lang="ts">
-// if (process.client) {
-//   const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
-//   if (savedTheme === 'dark') {
-//     document.documentElement.classList.add('dark');
-//   } else {
-//     document.documentElement.classList.remove('dark');
-//   }
-// }
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Pheap Sopheaktra",
+        "url": "https://pheap-sopheaktra.vercel.app/",
+        "sameAs": [
+          "https://github.com/PheaktraPheap",
+          "https://www.linkedin.com/in/pheap-sopheaktra"
+        ],
+        "jobTitle": "Full-Stack Developer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Self-employed"
+        }
+      })
+    }
+  ]
+})
 </script>
 
