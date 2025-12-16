@@ -42,7 +42,7 @@
                    after:h-0.5 after:w-0 after:bg-primary-500
                    after:transition-all after:duration-300
                    hover:after:w-full"
-            @click="(e) => handleNavClick(e, link.href)"
+             @click="(e) => handleMobileNavClick(e, link)"
           >
             {{ link.name }}
           </NuxtLink>
@@ -83,7 +83,7 @@
                  text-gray-700 dark:text-gray-200
                  hover:text-primary-600 dark:hover:text-primary-400
                  transition"
-          @click="(e) => handleMobileNavClick(e, link.href)"
+           @click="(e) => handleMobileNavClick(e, link)"
         >
           {{ link.name }}
         </NuxtLink>
