@@ -22,25 +22,35 @@ export default defineNuxtConfig({
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Portfolio of Pheap Sopheaktra – Full-stack developer specializing in API development, backend solutions, and modern web applications.' },
-        { name: 'keywords', content: 'Pheap Sopheaktra, Portfolio, Web Developer, Full-Stack, API, Laravel, Nuxt, Tailwind CSS' },
+        {
+          name: 'description',
+          content: 'Portfolio of Pheap Sopheaktra – Full-stack developer specializing in API development, backend solutions, and modern web applications.'
+        },
+        {
+          name: 'keywords',
+          content: 'Pheap Sopheaktra, Portfolio, Web Developer, Full-Stack, API, Laravel, Nuxt, Tailwind CSS'
+        },
 
         // Open Graph
         { property: 'og:title', content: 'Pheap Sopheaktra | Full-Stack Developer' },
         { property: 'og:description', content: 'Portfolio showcasing API development, backend solutions, and full-stack projects.' },
         { property: 'og:type', content: 'website' },
         { property: 'og:url', content: 'https://pheap-sopheaktra.vercel.app/' },
-        { property: 'og:image', content: '/social-preview.png' },
+        {
+          property: 'og:image',
+          content: 'https://pheap-sopheaktra.vercel.app/social-preview.png'
+        },
 
-        // Twitter Card
+        // Twitter
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:title', content: 'Pheap Sopheaktra | Full-Stack Developer' },
         { name: 'twitter:description', content: 'Portfolio showcasing API development, backend solutions, and full-stack projects.' },
-        { name: 'twitter:image', content: '/social-preview.png' },
+        {
+          name: 'twitter:image',
+          content: 'https://pheap-sopheaktra.vercel.app/social-preview.png'
+        }
       ],
-      link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-      ]
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
     }
   },
   ssr: true,
